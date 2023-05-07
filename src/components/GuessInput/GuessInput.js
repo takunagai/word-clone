@@ -1,12 +1,13 @@
 import { useState } from "react";
 
-function GuessInput() {
-  const [guessInputValue, setGuessInputValue] = useState("");
+function GuessInput({ guesses, setGuesses }) {
+  const [guess, setGuess] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (guessInputValue.length === 5) {
-      console.log(guessInputValue);
-      setGuessInputValue("");
+    if (guess.length === 5) {
+      console.log(guess);
+      setGuesses([...guesses, guess]);
+      setGuess("");
     } else {
       window.alert("Guess must be 5 characters long.");
     }
@@ -18,9 +19,9 @@ function GuessInput() {
       <input
         id="guess-input"
         type="text"
-        value={guessInputValue}
+        value={guess}
         onChange={(event) => {
-          setGuessInputValue(event.target.value.toUpperCase());
+          setGuess(event.target.value.toUpperCase());
         }}
       />
     </form>
