@@ -1,6 +1,6 @@
 import React from "react";
 
-function GuessHistories({ guesses }) {
+function GuessResults({ guesses }) {
   return (
     <div className="guess-results">
       {guesses.map((guess, index) => (
@@ -12,4 +12,4 @@ function GuessHistories({ guesses }) {
   );
 }
 
-export default GuessHistories;
+export default GuessResults;
