@@ -5,7 +5,7 @@ function GuessInput({ guesses, setGuesses }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (guess.length === 5) {
-      console.log(guess);
+      // console.log(guess);
       setGuesses([...guesses, guess]);
       setGuess("");
     } else {
