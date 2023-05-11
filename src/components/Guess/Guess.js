@@ -2,7 +2,7 @@ import React from "react";
 import { range } from "../../utils";
 import { checkGuess } from "../../game-helpers";
 
-function Guess({ guess, answer }) {
+function Guess({ guess, answer, setGameResult }) {
   const resultData = checkGuess(guess, answer);
   console.log(resultData);
   // checkGuess() 関数は、以下のようなオブジェクトの配列を返す:
@@ -13,6 +13,11 @@ function Guess({ guess, answer }) {
   //   { letter: 'L', status: 'misplaced' },
   //   { letter: 'E', status: 'misplaced' },
   // ]
+
+  // 全ての文字の status が correct であれば、ログを出力
+  if (resultData && resultData.every((data) => data.status === "correct")) {
+    setGameResult("win");
+  }
 
   return (
     <p className="guess">
