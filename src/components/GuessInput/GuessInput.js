@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
 let restOfGuesses = NUM_OF_GUESSES_ALLOWED;
 
-function GuessInput({ guesses, setGuesses }) {
+function GuessInput({ guesses, setGuesses, setGameResult }) {
   const [guess, setGuess] = useState("");
   const [isInputActive, setIsInputActive] = useState(false);
   const handleSubmit = (event) => {
@@ -10,7 +10,11 @@ function GuessInput({ guesses, setGuesses }) {
     if (guess.length === 5) {
       // console.log(guess);
       setGuesses([...guesses, guess]);
-      --restOfGuesses <= 0 && setIsInputActive(true);
+      --restOfGuesses;
+      if (restOfGuesses <= 0) {
+        setIsInputActive(true);
+        setGameResult("lose");
+      }
       setGuess("");
     } else {
       window.alert("Guess must be 5 characters long.");

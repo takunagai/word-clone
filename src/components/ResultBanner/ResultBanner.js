@@ -6,7 +6,7 @@ function ResultBanner({ gameResult }) {
       <div className="happy banner">
         <p>
           <strong>Congratulations!</strong> Got it in
-          <strong>3 guesses</strong>.
+          <strong>3 guesses</strong>. {/* TODO: 正解までの回数表示 */}
         </p>
       </div>
     );

@@ -22,7 +22,11 @@ function Game() {
         answer={answer}
         setGameResult={setGameResult}
       />
-      <GuessInput guesses={guesses} setGuesses={setGuesses} />
+      <GuessInput
+        guesses={guesses}
+        setGuesses={setGuesses}
+        setGameResult={setGameResult}
+      />
       <ResultBanner gameResult={gameResult} />
     </>
   );
