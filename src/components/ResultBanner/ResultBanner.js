@@ -1,12 +1,12 @@
 import React from "react";
 
-function ResultBanner({ gameResult, answer }) {
+function ResultBanner({ gameResult, answer, clearCount }) {
   if (gameResult === "win") {
     return (
       <div className="happy banner">
         <p>
-          <strong>Congratulations!</strong> Got it in
-          <strong>3 guesses</strong>. {/* TODO: 正解までの回数表示 */}
+          <strong>Congratulations!</strong> Got it in{" "}
+          <strong>{clearCount} guesses</strong>.{" "}
         </p>
       </div>
     );
