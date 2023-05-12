@@ -1,10 +1,9 @@
-import React from "react";
 import { range } from "../../utils";
 import { checkGuess } from "../../game-helpers";
 
 function Guess({ guess, answer, setGameResult }) {
   const resultData = checkGuess(guess, answer);
-  console.log(resultData);
+  // console.log(resultData);
   // checkGuess() 関数は、以下のようなオブジェクトの配列を返す:
   // [
   //   { letter: 'W', status: 'incorrect' },

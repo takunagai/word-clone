@@ -5,10 +5,10 @@ let restOfGuesses = NUM_OF_GUESSES_ALLOWED;
 function GuessInput({ guesses, setGuesses, setGameResult }) {
   const [guess, setGuess] = useState("");
   const [isInputActive, setIsInputActive] = useState(false);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     if (guess.length === 5) {
-      // console.log(guess);
       setGuesses([...guesses, guess]);
       --restOfGuesses;
       if (restOfGuesses <= 0) {

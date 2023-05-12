@@ -1,5 +1,3 @@
-import React from "react";
-
 function ResultBanner({ gameResult, answer, clearCount }) {
   if (gameResult === "win") {
     return (

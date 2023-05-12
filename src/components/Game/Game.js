@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 
 import { sample } from "../../utils";
 import { WORDS } from "../../data";
@@ -8,12 +8,10 @@ import ResultBanner from "../ResultBanner";
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
-// To make debugging easier, we'll log the solution in the console.
-console.log(`Answer: ${answer}`);
 
 function Game() {
-  const [guesses, setGuesses] = React.useState([]);
-  const [gameResult, setGameResult] = React.useState("");
+  const [guesses, setGuesses] = useState([]);
+  const [gameResult, setGameResult] = useState("");
 
   return (
     <>
