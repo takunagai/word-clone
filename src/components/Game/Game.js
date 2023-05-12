@@ -27,7 +27,7 @@ function Game() {
         setGuesses={setGuesses}
         setGameResult={setGameResult}
       />
-      <ResultBanner gameResult={gameResult} />
+      <ResultBanner gameResult={gameResult} answer={answer} />
     </>
   );
 }

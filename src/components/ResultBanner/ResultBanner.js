@@ -1,6 +1,6 @@
 import React from "react";
 
-function ResultBanner({ gameResult }) {
+function ResultBanner({ gameResult, answer }) {
   if (gameResult === "win") {
     return (
       <div className="happy banner">
@@ -14,7 +14,7 @@ function ResultBanner({ gameResult }) {
     return (
       <div className="sad banner">
         <p>
-          Sorry, the correct answer is <strong>LEARN</strong>.
+          Sorry, the correct answer is <strong>{answer}</strong>.
         </p>
       </div>
     );
