@@ -8,17 +8,19 @@ function GuessInput({ guesses, setGuesses, setGameResult }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (guess.length === 5) {
-      setGuesses([...guesses, guess]);
-      --restOfGuesses;
-      if (restOfGuesses <= 0) {
-        setIsInputActive(true);
-        setGameResult("lose");
-      }
-      setGuess("");
-    } else {
-      window.alert("Guess must be 5 characters long.");
+
+    if (guess.length !== 5) {
+      window.alert("Guess must be 5 characters long.💖");
+      return;
     }
+
+    setGuesses([...guesses, guess]);
+    --restOfGuesses;
+    if (restOfGuesses <= 0) {
+      setIsInputActive(true);
+      setGameResult("lose");
+    }
+    setGuess("");
   };
 
   return (
