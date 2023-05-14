@@ -9,10 +9,10 @@ function GuessInput({ guesses, setGuesses, setGameResult }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (guess.length !== 5) {
-      window.alert("Guess must be 5 characters long.💖");
-      return;
-    }
+    // if (guess.length !== 5) {
+    //   window.alert("Guess must be 5 characters long.💖");
+    //   return;
+    // }
 
     setGuesses([...guesses, guess]);
     --restOfGuesses;
@@ -32,12 +32,15 @@ function GuessInput({ guesses, setGuesses, setGameResult }) {
         required
         minLength={5}
         maxLength={5}
+        pattern="[a-zA-Z]{5}"
+        title="5 letter word"
         value={guess}
         disabled={isInputActive}
         onChange={(event) => {
           setGuess(event.target.value.toUpperCase());
         }}
       />
+      {/* pattern の箇所、ブラウザの不具合対策に必須。5文字のアルファベットのみを許可 */}
     </form>
   );
 }
