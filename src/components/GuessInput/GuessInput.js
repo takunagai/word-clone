@@ -29,6 +29,9 @@ function GuessInput({ guesses, setGuesses, setGameResult }) {
       <input
         id="guess-input"
         type="text"
+        required
+        minLength={5}
+        maxLength={5}
         value={guess}
         disabled={isInputActive}
         onChange={(event) => {
